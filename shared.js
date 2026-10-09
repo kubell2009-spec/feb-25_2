@@ -77,3 +77,20 @@ export function makeInput(placeholder = "", background = "black", type = "text")
     input.autocomplete = type === "password" ? "current-password" : "off";
     return input;
 }
+
+export function makePasswordCheck({
+    input,
+    correctPassword,
+    onCorrect = () => {},
+    onIncorrect = () => {}
+}) {
+    function check() {
+        if (input.value === correctPassword) {
+            onCorrect();
+        } else {
+            onIncorrect();
+        }
+    }
+
+    return check;
+}
