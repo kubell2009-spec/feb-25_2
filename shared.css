@@ -94,3 +94,8 @@
     color: currentColor;
     opacity: 0.65;
 }
+
+.shared-input:focus {
+    outline: none;
+    box-shadow: none;
+}
