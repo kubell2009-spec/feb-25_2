@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shared UI Helpers Demo</title>
+  <link rel="stylesheet" href="./shared.css">
+</head>
+<body class="bg-black" style="padding: 2rem;">
+  <main id="app"></main>
+
+  <script type="module">
+    import { makeText, lineBreak, makeButton, makeInput }
+      from "./shared.js";
+
+    const app = document.querySelector("#app");
+
+    app.append(
+      makeText("Secret portal", "black", "h1"),
+      lineBreak(),
+      makeText("Enter the password to continue.", "black", "p"),
+      lineBreak()
+    );
+
+    const password = makeInput("Enter password", "black", "password");
+    const enter = makeButton("Enter", "black", () => {
+      if (password.value === "example123") {
+        alert("Correct password!");
+      } else {
+        alert("Incorrect password.");
+      }
+    });
+
+    app.append(password, document.createTextNode(" "), enter);
+  </script>
+</body>
+</html>
