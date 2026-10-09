@@ -1,0 +1,55 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="./shared.css">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .landing {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+            background: linear-gradient(
+                to right,
+                black 50%,
+                white 50%
+            );
+        }
+    </style>
+</head>
+<body>
+    <main class="landing" id="landing"></main>
+
+    <script type="module">
+        import {
+            makeText,
+            makeButton
+        } from "./shared.js";
+
+        const landing = document.getElementById("landing");
+
+        landing.append(
+            makeText("Welcome", "h1"),
+            makeText("Click below to enter.", "p"),
+            makeButton("Enter", "black", () => {
+                window.location.href = "./example.html";
+            })
+        );
+    </script>
+</body>
+</html>
+```
