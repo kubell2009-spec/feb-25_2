@@ -17,7 +17,8 @@
 .shared-text {
     display: inline-block;
     margin: 0;
-    color: inherit;
+    color: #fff;
+    mix-blend-mode: difference;
 }
 
 /* Explicit theme classes make the text contrast predictable. */
