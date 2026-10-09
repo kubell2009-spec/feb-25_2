@@ -1,0 +1,95 @@
+/* shared.css
+   Reusable black/white UI helpers for static HTML sites.
+   Add class "bg-white" or "bg-black" to the page/section that contains the elements.
+*/
+
+.bg-white {
+    background-color: #fff;
+    color: #000;
+}
+
+.bg-black {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Text created by makeText() */
+.shared-text {
+    display: inline-block;
+    margin: 0;
+    color: inherit;
+}
+
+/* Explicit theme classes make the text contrast predictable. */
+.theme-white {
+    color: #000;
+}
+
+.theme-black {
+    color: #fff;
+}
+
+/* Buttons created by makeButton() */
+.shared-button {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border: 2px solid;
+    border-radius: 6px;
+    font: inherit;
+    cursor: pointer;
+    transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.shared-button:hover {
+    opacity: 0.82;
+}
+
+.shared-button:active {
+    transform: translateY(1px);
+}
+
+.shared-button:focus-visible,
+.shared-input:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.button-on-white {
+    color: #000;
+    background: #fff;
+    border-color: #000;
+}
+
+.button-on-black {
+    color: #fff;
+    background: #000;
+    border-color: #fff;
+}
+
+/* Editable input created by makeInput() */
+.shared-input {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0.6rem 0.75rem;
+    border: 2px solid;
+    border-radius: 6px;
+    font: inherit;
+    min-width: 12rem;
+}
+
+.input-on-white {
+    color: #000;
+    background: #fff;
+    border-color: #000;
+}
+
+.input-on-black {
+    color: #fff;
+    background: #000;
+    border-color: #fff;
+}
+
+.shared-input::placeholder {
+    color: currentColor;
+    opacity: 0.65;
+}
