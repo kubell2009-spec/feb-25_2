@@ -14,16 +14,9 @@ function validateTheme(theme) {
  * Create text that contrasts with the chosen background.
  * Example: makeText("Welcome!", "black")
  */
-export function makeText(text, background = "black", tag = "span") {
-    validateTheme(background);
-
-    const allowedTags = new Set(["span", "p", "div", "label", "h1", "h2", "h3"]);
-    if (!allowedTags.has(tag)) {
-        throw new Error("Unsupported text tag.");
-    }
-
+export function makeText(text, tag = "span") {
     const element = document.createElement(tag);
-    element.classList.add("shared-text", background === "white" ? "theme-white" : "theme-black");
+    element.classList.add("shared-text");
     element.textContent = text;
     return element;
 }
