@@ -7,43 +7,41 @@
 
     <link rel="stylesheet" href="./shared.css">
 
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background: black;
-        }
+   
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: black;
+    }
 
-        /* Default layout: center everything */
-        .page {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            gap: 16px;
-            box-sizing: border-box;
-            padding: 24px;
-        }
+    #password-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+    }
 
-        /* Keep every result centered */
-        #result {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+    #result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-        /* Preserve the ASCII face's spacing */
-        .ascii-face {
-            white-space: pre;
-            font-family: monospace;
-            line-height: 1.2;
-        }
-    </style>
+    .ascii-face {
+        white-space: pre;
+        font-family: monospace;
+        line-height: 1.2;
+    }
+</style>
+
+<main class="shared-page">
+    <div id="password-area"></div>
+    <div id="result"></div>
+</main>
+
 </head>
 
 <body>
@@ -110,3 +108,4 @@
     </script>
 </body>
 </html>
+
