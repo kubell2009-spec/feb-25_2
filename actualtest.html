@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Own Adventure</title>
+
+    <link rel="stylesheet" href="./shared.css">
+
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .shared-page {
+            box-sizing: border-box;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 24px;
+            gap: 24px;
+        }
+
+        #artwork {
+            max-width: 100%;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: clamp(7px, 1.5vw, 14px);
+            line-height: 1.2;
+            white-space: pre;
+            text-align: left;
+        }
+
+        #story {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+            max-width: 700px;
+        }
+
+        #options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="shared-page">
+
+        <pre id="artwork">           .   :  ;   ,          _____\
+""------.__  \.      ,/    .----'"   ""`--.\
+____.------'-   ,--.  -    ""-------'""""\
+\\_______--=____/____\__=-_-________/";\.___\
+`\.              --           .--'   \"-.\
+. `\._          "" --          """\""/""\
+    `    `"--..    _--                "\
+     \--',.---'   - "\
+\----'"""         "\_-\
+   /                                _____,,....__\
+  /                   ___..------'"""            `""</pre>
+
+        <div id="story"></div>
+        <div id="options"></div>
+
+    </main>
+
+    <script type="module">
+        import {
+            makeText,
+            lineBreak,
+            makeButton
+        } from "./shared.js";
+
+        const story = document.getElementById("story");
+        const options = document.getElementById("options");
+
+        // ==========================================
+        // REUSABLE SCREEN FUNCTIONS
+        // ==========================================
+
+        function showScreen(textElements, buttons) {
+            story.replaceChildren();
+            options.replaceChildren();
+
+            // Add the text/content for this screen
+            story.append(...textElements);
+
+            // Add the available choices
+            options.append(...buttons);
+        }
+
+        function makePlaceholderText() {
+            const firstLine = makeText(
+                "Placeholder text, line one.",
+                "span"
+            );
+
+            const secondLine = makeText(
+                "Placeholder text, line two.",
+                "span"
+            );
+
+            // Use our shared line-break function
+            return [
+                firstLine,
+                lineBreak(),
+                secondLine
+            ];
+        }
+
+        // ==========================================
+        // STAGE 1: ORIGINAL CHOICES
+        // ==========================================
+
+        function showStart() {
+            showScreen(
+                makePlaceholderText(),
+                [
+                    makeButton("Option A", "black", () => {
+                        showAdvanced();
+                    }),
+
+                    makeButton("Option B", "black", () => {
+                        showFailed();
+                    }),
+
+                    makeButton("Option C", "black", () => {
+                        showWon();
+                    })
+                ]
+            );
+        }
+
+        // ==========================================
+        // STAGE 2A: ADVANCED
+        // ==========================================
+
+        function showAdvanced() {
+            showScreen(
+                [
+                    makeText(
+                        "you've advanced to the next step",
+                        "p"
+                    )
+                ],
+                [
+                    // These buttons intentionally do nothing for now.
+                    makeButton("Option A", "black"),
+                    makeButton("Option B", "black"),
+                    makeButton("Option C", "black")
+                ]
+            );
+        }
+
+        // ==========================================
+        // STAGE 2B: FAILED
+        // ==========================================
+
+        function showFailed() {
+            showScreen(
+                [
+                    makeText("you've failed", "p")
+                ],
+                [
+                    makeButton("Retry", "black", () => {
+                        showStart();
+                    })
+                ]
+            );
+        }
+
+        // ==========================================
+        // STAGE 2C: WON
+        // ==========================================
+
+        function showWon() {
+            showScreen(
+                [
+                    makeText("you've won, redirecting", "p")
+                ],
+                []
+            );
+
+            // Redirect after 3 seconds
+            setTimeout(() => {
+                window.location.href = "https://www.youtube.com/";
+            }, 3000);
+        }
+
+        // ==========================================
+        // INITIAL SCREEN
+        // ==========================================
+
+        showStart();
+    </script>
+</body>
+</html>
