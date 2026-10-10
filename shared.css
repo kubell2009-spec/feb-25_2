@@ -95,24 +95,31 @@
     opacity: 0.65;
 }
 
-.shared-input:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-/* Default page alignment */
+/* Default main layout for every page */
 .shared-page {
+    box-sizing: border-box;
     min-height: 100vh;
+    min-height: 100dvh;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
+
+    /* Center vertically when content fits;
+       allow scrolling when it doesn't. */
+    justify-content: center;
+    padding: 40px 24px;
     gap: 16px;
-    box-sizing: border-box;
 }
 
 /* Default text alignment */
 .shared-text {
     text-align: center;
+}
+
+/* Remove the default input focus outline */
+.shared-input:focus {
+    outline: none;
+    box-shadow: none;
 }
