@@ -50,12 +50,19 @@ pre,
 }
 
 /* Buttons created by makeButton() */
+
 .shared-button {
     display: inline-block;
     padding: 0.6rem 1rem;
-    border: 2px solid;
+    border: 2px solid white;
     border-radius: 6px;
-    font: "Dancing Script", cursive;
+
+    font-family: "Dancing Script", cursive;
+    color: white;
+    background: black;
+
+    mix-blend-mode: difference;
+
     cursor: pointer;
     transition: opacity 120ms ease, transform 120ms ease;
 }
@@ -74,17 +81,10 @@ pre,
     outline-offset: 3px;
 }
 
-.button-on-white {
-    color: #000;
-    background: #fff;
-    border-color: #000;
-}
-
-.button-on-black {
-    color: #fff;
-    background: #000;
-    border-color: #fff;
-}
+/* These classes are no longer needed for contrast:
+   .button-on-white
+   .button-on-black
+*/
 
 /* Editable input created by makeInput() */
 .shared-input {
