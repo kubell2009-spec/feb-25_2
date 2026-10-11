@@ -40,15 +40,19 @@
 
         const landing = document.getElementById("landing");
         
-buttons.append(
-    makeButton("Sun", "black", () => {
-        window.location.href = "./solarstream.html";
-    }),
+        buttons.style.display = "flex";
+        buttons.style.justifyContent = "center";
+        buttons.style.gap = "12px";
 
-    makeButton("Moon", "black", () => {
-        window.location.href = "./lunardroplets.html";
-    })
-);
+        buttons.append(
+            makeButton("Sun", "black", () => {
+                window.location.href = "./solarstream.html";
+            }),
+
+            makeButton("Moon", "black", () => {
+                window.location.href = "./lunardroplets.html";
+            })
+        );    
         
         landing.append(
             makeText("Welcome", "h1"),
