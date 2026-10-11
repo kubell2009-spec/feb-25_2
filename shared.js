@@ -34,26 +34,22 @@ export function lineBreak() {
  * onClick is optional and should be a function.
  * Example: makeButton("Enter", "white", () => checkPassword())
  */
-export function makeButton(label, background = "black", onClick = null) {
-    validateTheme(background);
 
+export function makeButton(label, background = "black", onClick = null) {
     const button = document.createElement("button");
-    button.type = "button";
-    button.classList.add(
-        "shared-button",
-        background === "white" ? "button-on-white" : "button-on-black"
-    );
+
+    button.classList.add("shared-button");
     button.textContent = label;
 
-    if (onClick !== null) {
-        if (typeof onClick !== "function") {
-            throw new TypeError("onClick must be a function or null.");
-        }
+    // Keep the old argument for compatibility,
+    // but let CSS handle automatic contrast.
+    if (typeof onClick === "function") {
         button.addEventListener("click", onClick);
     }
 
     return button;
 }
+
 
 /**
  * Create an editable input. Use type="password" for password entry.
