@@ -3,6 +3,25 @@
    Add class "bg-white" or "bg-black" to the page/section that contains the elements.
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+/* Default font for the entire website */
+body {
+    font-family: "Dancing Script", cursive;
+}
+
+/* All shared text uses the default cursive font */
+.shared-text {
+    font-family: inherit;
+    text-align: center;
+}
+
+/* Keep ASCII art aligned correctly */
+pre,
+.ascii-face {
+    font-family: monospace;
+}
+
 .bg-white {
     background-color: #fff;
     color: #000;
