@@ -12,7 +12,7 @@ body {
 
 /* All shared text uses the default cursive font */
 .shared-text {
-    font-family: inherit;
+    font-family: "Dancing Script", cursive;
     text-align: center;
 }
 
@@ -55,7 +55,7 @@ pre,
     padding: 0.6rem 1rem;
     border: 2px solid;
     border-radius: 6px;
-    font: inherit;
+    font: "Dancing Script", cursive;
     cursor: pointer;
     transition: opacity 120ms ease, transform 120ms ease;
 }
