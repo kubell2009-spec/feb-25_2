@@ -10,6 +10,12 @@ body {
     font-family: "Cedarville Cursive", cursive;
 }
 
+h1.shared-text {
+    font-family: "Cedarville Cursive", cursive;
+    font-size: 36px;
+    line-height: 1.3;
+}
+
 /* All shared text uses the default cursive font */
 .shared-text {
     font-family: "Cedarville Cursive", cursive;
@@ -17,12 +23,6 @@ body {
     font-size: 19px;
     line-height: 1.7;
     letter-spacing: 0.02em;
-}
-
-h1.shared-text {
-    font-family: "Cedarville Cursive", cursive;
-    font-size: 36px;
-    line-height: 1.3;
 }
 
 /* Keep ASCII art aligned correctly */
