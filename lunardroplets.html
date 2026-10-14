@@ -120,9 +120,11 @@
                 "Which will you attempt to fix first?"
             );
         
+        const head1 = makeText("Interlude", "h1");
+        
         function showStart() {
             showScreen(
-                m1,
+                [m1, head1],
                 [
                     makeButton("sails", "black", () => {
                         fixsails();
