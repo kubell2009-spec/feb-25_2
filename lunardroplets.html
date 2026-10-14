@@ -101,53 +101,49 @@
             options.append(...buttons);
         }
 
-        function makePlaceholderText() {
-            const firstLine = makeText(
-                "Placeholder text, line one.",
-                "span"
-            );
-
-            const secondLine = makeText(
-                "Placeholder text, line two.",
-                "span"
-            );
-
-            // Use our shared line-break function
-            return [
-                firstLine,
-                lineBreak(),
-                secondLine
-            ];
-        }
-
         // ==========================================
-        // STAGE 1: ORIGINAL CHOICES
+        // START
         // ==========================================
-
+        
+        const m1 = makeText("Snow");
+            m1.append(
+                " falls from a lifeless white moon on an empty sky, like ashes crumbling from worthless scorched firewood. Strong wind makes waves crash and claw at the feet of a narrow cliffside passage, yet its mountains coldly stand indifferent.",
+                " For a sailor, a nightmare that pesters many nights' sleep. For an underprepared refugee, an eternal sleep. A refugee from her own life, a refugee like you.",
+                " But the weight of the anchor is far greater than the weight of the mind, and the pull of a wave is far stronger than the pull of a thought. No matter who you are, you have to steer your makeshift wooden raft to safety.",
+                lineBreak(), lineBreak(),
+                "The recycled-clothing sails stretch and bend out of control in the winds. You will be on course to crash into solid stone without intervention.",
+                lineBreak(), lineBreak(),
+                "The knots holding your raft together begin to give out. Maybe using vines around your dilapidated house was something to be reconsidered, no matter how long you spent trying to pick out the best ones.",
+                lineBreak(), lineBreak(),
+                "And of course, your rations are in danger of being flung off. Sure, you made a chest and secured it to the raft, but the lid is at risk of coming off. And the raft is falling apart anyway.",
+                lineBreak(), lineBreak(),
+                "Which will you attempt to fix first?"
+            );
+        
         function showStart() {
             showScreen(
-                makePlaceholderText(),
+                m1,
                 [
-                    makeButton("Option A", "black", () => {
-                        showAdvanced();
+                    makeButton("sails", "black", () => {
+                        fixsails();
                     }),
 
-                    makeButton("Option B", "black", () => {
-                        showFailed();
+                    makeButton("ropes", "black", () => {
+                        fixropes();
                     }),
 
-                    makeButton("Option C", "black", () => {
-                        showWon();
+                    makeButton("chest", "black", () => {
+                        fixchest();
                     })
                 ]
             );
         }
 
         // ==========================================
-        // STAGE 2A: ADVANCED
+        // START / FIX SAILS
         // ==========================================
 
-        function showAdvanced() {
+        function fixsails() {
             showScreen(
                 [
                     makeText(
@@ -165,10 +161,10 @@
         }
 
         // ==========================================
-        // STAGE 2B: FAILED
+        // START / FIX ROPES
         // ==========================================
 
-        function showFailed() {
+        function fixropes() {
             showScreen(
                 [
                     makeText("you've failed", "p")
@@ -182,10 +178,10 @@
         }
 
         // ==========================================
-        // STAGE 2C: WON
+        // START / FIX CHEST
         // ==========================================
 
-        function showWon() {
+        function fixchest() {
             showScreen(
                 [
                     makeText("you've won, redirecting", "p")
