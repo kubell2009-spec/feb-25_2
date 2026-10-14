@@ -19,7 +19,7 @@ body {
     letter-spacing: 0.02em;
 }
 
-h1 {
+h1.shared-text {
     font-family: "Cedarville Cursive", cursive;
     font-size: 36px;
     line-height: 1.3;
