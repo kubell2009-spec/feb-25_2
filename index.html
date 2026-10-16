@@ -39,30 +39,55 @@
         } from "./shared.js";
 
         const landing = document.getElementById("landing");
-        const buttons = document.createElement("div");
-        
-        buttons.style.display = "flex";
-        buttons.style.justifyContent = "center";
-        buttons.style.gap = "12px";
 
-        buttons.append(
-            makeButton("Sun", "black", () => {
+        // Create the row for the two buttons and input
+        const controls = document.createElement("div");
+
+        controls.style.display = "flex";
+        controls.style.alignItems = "center";
+        controls.style.justifyContent = "center";
+        controls.style.gap = "12px";
+
+        // Create the input box
+        const password = makeInput("Enter password", "password");
+
+        // Create the Confirm Password button
+        const confirm = makeButton("Confirm Password", () => {
+            if (password.value === "your-password") {
+                window.location.href = "./solarstream.html";
+            } else {
+                alert("Incorrect password");
+            }
+        });
+
+        // Create the Sun and Moon buttons
+        controls.append(
+            makeButton("Sun", () => {
                 window.location.href = "./solarstream.html";
             }),
 
-            makeButton("Eclipse", () => {
-                window.location.href = "./eclipse.html";
-            }),
+            password,
 
-            makeButton("Moon", "black", () => {
+            makeButton("Moon", () => {
                 window.location.href = "./lunardroplets.html";
             })
-        );    
-        
+        );
+
+        // Create a container for the row and confirmation button
+        const passwordBox = document.createElement("div");
+
+        passwordBox.style.display = "flex";
+        passwordBox.style.flexDirection = "column";
+        passwordBox.style.alignItems = "center";
+        passwordBox.style.gap = "16px";
+
+        passwordBox.append(controls, confirm);
+
+        // Add everything to the page
         landing.append(
             makeText("Welcome", "h1"),
             makeText("Click below to enter.", "p"),
-            buttons
+            passwordBox
         );
     </script>
 </body>
