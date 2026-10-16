@@ -17,28 +17,50 @@
     position: relative;
     }
 
-    body::before {
-        content: "";
-        position: fixed;
-        inset: -20%;
-        z-index: -1;
-        pointer-events: none;
+body::before {
+    content: "";
+    position: fixed;
+    inset: -10%;
+    z-index: -1;
+    pointer-events: none;
+    background-color: black;
 
-        background:
-            linear-gradient(white, white) 5% 10% / 280px 280px no-repeat,
-            linear-gradient(white, white) 65% 15% / 360px 360px no-repeat,
-            linear-gradient(white, white) 25% 75% / 320px 320px no-repeat,
-            linear-gradient(white, white) 85% 80% / 260px 260px no-repeat,
-            conic-gradient(
-                white 25%,
-                black 0 50%,
-                white 0 75%,
-                black 0
-            ) 0 0 / 340px 340px;
+    background-image:
+        linear-gradient(white, white),
+        linear-gradient(white, white),
+        linear-gradient(white, white),
+        linear-gradient(white, white),
+        linear-gradient(white, white),
+        linear-gradient(white, white),
+        linear-gradient(white, white),
+        linear-gradient(white, white),
+        linear-gradient(white, white);
 
-        transform: rotate(-12deg) scale(1.1);
-    }
+    background-size:
+        420px 280px,
+        250px 390px,
+        380px 300px,
+        310px 420px,
+        450px 260px,
+        220px 220px,
+        300px 340px,
+        180px 260px,
+        360px 180px;
 
+    background-position:
+        3% 8%,
+        52% 3%,
+        78% 35%,
+        18% 62%,
+        62% 75%,
+        42% 38%,
+        92% 83%,
+        30% 18%,
+        70% 58%;
+
+    background-repeat: no-repeat;
+    transform: rotate(-8deg) scale(1.15);
+}
     #password-area {
         display: flex;
         flex-direction: column;
@@ -91,7 +113,7 @@
         );
         passwordInput.addEventListener("keydown", (event) => {
             if (event.key === "Enter") {
-                confirm.click();
+                submitButton.click();
             }
         });
 
@@ -123,7 +145,6 @@
         // Create the shared button
         const submitButton = makeButton(
             "Submit",
-            "black",
             checkPassword
         );
 
