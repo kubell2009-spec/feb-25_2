@@ -10,8 +10,33 @@
    
 <style>
     body {
-        margin: 0;
-        background: black;
+    margin: 0;
+    min-height: 100vh;
+    background: black;
+    isolation: isolate;
+    position: relative;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: -20%;
+        z-index: -1;
+        pointer-events: none;
+
+        background:
+            linear-gradient(white, white) 5% 10% / 280px 280px no-repeat,
+            linear-gradient(white, white) 65% 15% / 360px 360px no-repeat,
+            linear-gradient(white, white) 25% 75% / 320px 320px no-repeat,
+            linear-gradient(white, white) 85% 80% / 260px 260px no-repeat,
+            conic-gradient(
+                white 25%,
+                black 0 50%,
+                white 0 75%,
+                black 0
+            ) 0 0 / 340px 340px;
+
+        transform: rotate(-12deg) scale(1.1);
     }
 
     #password-area {
@@ -36,15 +61,11 @@
     }
 </style>
 
-<main class="shared-page">
-    <div id="password-area"></div>
-    <div id="result"></div>
-</main>
-
 </head>
 
 <body>
-    <main class="page">
+    <main class="shared-page">
+        <div id="heading"></div>
         <div id="password-area"></div>
         <div id="result"></div>
     </main>
@@ -54,10 +75,13 @@
             makeText,
             makeInput,
             makeButton,
-            makePasswordCheck
+            makePasswordCheck,
+            lineBreak
         } from "./shared.js";
 
         const passwordArea = document.getElementById("password-area");
+        const heading = document.getElementById("heading");
+        heading.append(makeText("Your story begins here.", "h1"));
         const result = document.getElementById("result");
 
         // Create the shared password input
@@ -77,25 +101,21 @@
             correctPassword: "123456",
 
             onCorrect: () => {
-                result.replaceChildren();
+                result.replaceChildren(makeText("you've won"));
 
-                const smiley = makeText(
-                    " .-\"\"\"-. \n" +
-                    "/       \\\n" +
-                    "|  o o  |\n" +
-                    "|   ^   |\n" +
-                    "| \\___/ |\n" +
-                    " \\_____/",
-                    "pre"
-                );
+    // Lock the controls
+                passwordInput.disabled = true;
+                submitButton.disabled = true;
 
-                smiley.classList.add("ascii-face");
-                result.append(smiley);
+    // Redirect after 3 seconds
+                setTimeout(() => {
+                    window.location.href = "https://www.youtube.com/";
+                }, 3000);
             },
 
             onIncorrect: () => {
                 result.replaceChildren(
-                    makeText("you got it wrong", "p")
+                    makeText("you got it wrong")
                 );
             }
         });
