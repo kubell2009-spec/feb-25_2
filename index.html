@@ -36,7 +36,8 @@
         import {
             makeText,
             makeButton,
-            makeInput
+            makeInput,
+            lineBreak
         } from "./shared.js";
 
      
@@ -52,11 +53,11 @@
         controls.style.justifyContent = "center";
         controls.style.gap = "12px";
 
-        const sunButton = makeButton("Sun", () => {
+        const sunButton = makeButton("Solar Fragments", () => {
             window.location.href = "./solarstream.html";
         });
 
-        const moonButton = makeButton("Moon", () => {
+        const moonButton = makeButton("Lunar Fragments", () => {
             window.location.href = "./lunardroplets.html";
         });
 
@@ -102,9 +103,16 @@
         passwordBox.append(controls, confirm, result);
 
         // Add everything to the page
+        const headering = makeText("in Harmonizing a Contrast", "h1");
+        const description = makeText("Recover the fragments of the Sun and the Moon,");
+        description.append(
+            lineBreak(),
+            "and piece them together where day transitions into night."
+        )
+        
         landing.append(
-            makeText("Welcome", "h1"),
-            makeText("Click below to enter.", "p"),
+            headering,
+            description,
             passwordBox
         );
 
