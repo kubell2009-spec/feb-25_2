@@ -298,7 +298,12 @@ linear-gradient(white, white);
 
         const passwordArea = document.getElementById("password-area");
         const heading = document.getElementById("heading");
-        heading.append(makeText("Your story begins here.", "h1"));
+        heading.append(
+            makeText("Unification", "h1"),
+            lineBreak(),
+            makeText("The eclipse, a marvellous fusion of two opposite forces,"),
+            makeText("when the Sun embraces the Moon and the Moon fills the Sun.")
+        );
         const result = document.getElementById("result");
 
         // Create the shared password input
@@ -313,12 +318,17 @@ linear-gradient(white, white);
         });
 
         // Define what happens after checking the password
+        const correcttext = makeText("Their lights converge.");
+        correcttext.append(
+            lineBreak(),
+            "Redirecting in 3s..."
+        );
         const checkPassword = makePasswordCheck({
             input: passwordInput,
             correctPassword: "123456",
 
             onCorrect: () => {
-                result.replaceChildren(makeText("you've won"));
+                result.replaceChildren(correcttext);
 
     // Lock the controls
                 passwordInput.disabled = true;
@@ -332,14 +342,14 @@ linear-gradient(white, white);
 
             onIncorrect: () => {
                 result.replaceChildren(
-                    makeText("you got it wrong")
+                    makeText("Their lights repel.")
                 );
             }
         });
 
         // Create the shared button
         const submitButton = makeButton(
-            "Submit",
+            "Shine",
             checkPassword
         );
 
