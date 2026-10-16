@@ -38,50 +38,67 @@
             makeButton
         } from "./shared.js";
 
+     
         const landing = document.getElementById("landing");
 
-        // Create the row for the two buttons and input
-        const controls = document.createElement("div");
+        // Create the input
+        const password = makeInput("Enter password", "password");
 
+        // Create the row: Sun | Password | Moon
+        const controls = document.createElement("div");
         controls.style.display = "flex";
         controls.style.alignItems = "center";
         controls.style.justifyContent = "center";
         controls.style.gap = "12px";
 
-        // Create the input box
-        const password = makeInput("Enter password", "password");
+        const sunButton = makeButton("Sun", () => {
+            window.location.href = "./solarstream.html";
+        });
 
-        // Create the Confirm Password button
-        const confirm = makeButton("Confirm Password", () => {
+        const moonButton = makeButton("Moon", () => {
+            window.location.href = "./lunardroplets.html";
+        });
+
+        controls.append(sunButton, password, moonButton);
+
+        // Create the result message
+        const result = makeText("", "p");
+
+        // Track whether the user has won
+        let won = false;
+
+        // Create the confirmation button
+        const confirm = makeButton("Enter", () => {
+         // Prevent another attempt after winning
+            if (won) return;
+
             if (password.value === "your-password") {
-                window.location.href = "./solarstream.html";
+                won = true;
+                result.textContent = "you've won";
+
+        // Lock all controls
+                password.disabled = true;
+                sunButton.disabled = true;
+                moonButton.disabled = true;
+                confirm.disabled = true;
+
+        // Redirect after 3 seconds
+                setTimeout(() => {
+                    window.location.href = "./eclipse.html";
+                }, 3000);
             } else {
-                alert("Incorrect password");
+                result.textContent = "you've failed";
             }
         });
 
-        // Create the Sun and Moon buttons
-        controls.append(
-            makeButton("Sun", () => {
-                window.location.href = "./solarstream.html";
-            }),
-
-            password,
-
-            makeButton("Moon", () => {
-                window.location.href = "./lunardroplets.html";
-            })
-        );
-
-        // Create a container for the row and confirmation button
+        // Stack everything vertically
         const passwordBox = document.createElement("div");
-
         passwordBox.style.display = "flex";
         passwordBox.style.flexDirection = "column";
         passwordBox.style.alignItems = "center";
         passwordBox.style.gap = "16px";
 
-        passwordBox.append(controls, confirm);
+        passwordBox.append(controls, confirm, result);
 
         // Add everything to the page
         landing.append(
@@ -89,6 +106,7 @@
             makeText("Click below to enter.", "p"),
             passwordBox
         );
+
     </script>
 </body>
 </html>
