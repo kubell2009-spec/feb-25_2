@@ -63,9 +63,13 @@
         // Create the shared password input
         const passwordInput = makeInput(
             "Enter password",
-            "black",
-            "password"
+            "text"
         );
+        password.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                confirm.click();
+            }
+        });
 
         // Define what happens after checking the password
         const checkPassword = makePasswordCheck({
