@@ -44,7 +44,12 @@
         const landing = document.getElementById("landing");
 
         // Create the input
-        const password = makeInput("Enter password", "password");
+        const password = makeInput("Enter password", "text");
+        password.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                confirm.click();
+            }
+        });
 
         // Create the row: Sun | Password | Moon
         const controls = document.createElement("div");
