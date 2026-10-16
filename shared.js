@@ -55,21 +55,17 @@ export function makeButton(label, background = "black", onClick = null) {
  * Create an editable input. Use type="password" for password entry.
  * Example: makeInput("Enter password", "white", "password")
  */
-export function makeInput(placeholder = "", background = "black", type = "text") {
-    validateTheme(background);
-
+export function makeInput(placeholder = "", type = "text") {
     const allowedTypes = new Set(["text", "password", "email", "number"]);
-    if (!allowedTypes.has(type)) {
+
+   if (!allowedTypes.has(type)) {
         throw new Error("Input type must be text, password, email, or number.");
     }
 
     const input = document.createElement("input");
     input.type = type;
     input.placeholder = placeholder;
-    input.classList.add(
-        "shared-input",
-        background === "white" ? "input-on-white" : "input-on-black"
-    );
+    input.classList.add("shared-input");
     input.autocomplete = type === "password" ? "current-password" : "off";
     return input;
 }
