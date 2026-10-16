@@ -103,13 +103,16 @@ pre,
     box-sizing: border-box;
     display: inline-block;
     padding: 0.6rem 0.75rem;
-    border: 2px solid;
     border-radius: 6px;
     font: inherit;
     font-size: 19px;
     line-height: 1.7;
     letter-spacing: 0.02em;
     min-width: 12rem;
+    color: white;
+    background: black;
+    border: 2px solid white;
+    mix-blend-mode: difference;
 }
 
 .input-on-white {
