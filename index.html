@@ -75,13 +75,18 @@
         let won = false;
 
         // Create the confirmation button
-        const confirm = makeButton("Enter", () => {
+        const correcttext = makeText("A new celestial body emerges.");
+        correcttext.append(
+            lineBreak(),
+            makeText("Redirecting in 3s...")
+        );
+        const confirm = makeButton("Piece them together", () => {
          // Prevent another attempt after winning
             if (won) return;
 
             if (password.value === "your-password") {
                 won = true;
-                result.textContent = "you've won";
+                result.replaceChildren(correcttext);
 
         // Lock all controls
                 password.disabled = true;
