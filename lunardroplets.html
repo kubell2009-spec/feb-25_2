@@ -105,21 +105,21 @@
         // START
         // ==========================================
         
-        const m1 = makeText("A blizzard");
+        const m1 = makeText("Snow-ash");
             m1.append(
-                " manifests from a lifeless white moon on an empty sky, like clouds of ashes crumbling from worthless scorched firewood. Waves crash and claw at the feet of a narrow cliffside passage, yet its mountains coldly stand indifferent.",
+                " gently crumbles from the face of a lifeless pale moon. The river remains still, but clumps of half-frozen ice batter at each plank of my makeshift raft. Mountains stretch far beyond the limits of my sight, all around me.",
                 lineBreak(), lineBreak(),
-                "For a sailor, a nightmare that pesters many nights' sleep. For an underprepared refugee, an intoxicating promise of eternal bliss. A refugee from her own life, a refugee like me.",
+                "A professional sailor might sigh and groan at the sight of such conditions. Yet for an underprepared refugee, it is an intoxicating promise of eternal bliss. A refugee from her own life, a refugee like me.",
                 lineBreak(), lineBreak(),
-                "But the weight of the anchor is far greater than the weight of the mind, and the pull of a wave is far stronger than the pull of a thought. No matter who I am, I have to steer this crude wooden raft to safety.",
+                "But the weight of the anchor is far greater than the weight of the mind. Regardless of who I am, I have to steer myself to safety.",
                 lineBreak(), lineBreak(),
-                "The recycled-clothing sails stretch and bend out of control in the winds. I will be on course to crash into solid stone without intervention.",
+                "The cold has done much damage to my recycled-clothing sails. If I don't fix them, sooner or later it will come back to bite me.",
                 lineBreak(), lineBreak(),
-                "The knots holding my raft together begin to give out. Maybe using vines around my dilapidated house was something to be reconsidered, no matter how long I spent trying to pick out the best ones.",
+                "The knots holding my raft together are also giving out. Maybe using unidentified vines around my dilapidated house was something to be reconsidered.",
                 lineBreak(), lineBreak(),
-                "And of course, my rations are in danger of being flung off. Sure, I made a chest and secured it to the raft, but the lid is surely at risk of coming off. Plus, the raft is falling apart anyway.",
+                "And how mindless of me, to have left my food unmonitored in such cold. Some of my fruits are starting to go black and my meat chunks are hardly different from those ice chunks. I won't even think about starting a fire right now. At least there's consolation in the fact that most of that was stolen.",
                 lineBreak(), lineBreak(),
-                "What shall I try to fix first?"
+                "All while the raft is being rocked back and forth, of course. But I have to do something besides just steering."
             );
         
         const head1 = makeText("August 11th.", "h1");
@@ -134,11 +134,11 @@
                         fixsails();
                     }),
 
-                    makeButton("ropes", "black", () => {
-                        fixropes();
+                    makeButton("knots", "black", () => {
+                        fixknots();
                     }),
 
-                    makeButton("chest", "black", () => {
+                    makeButton("food", "black", () => {
                         fixchest();
                     })
                 ]
