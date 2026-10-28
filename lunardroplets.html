@@ -104,31 +104,33 @@
         // ==========================================
         // START
         // ==========================================
-        
+
+        const dub = [lineBreak(), lineBreak()];
         const m1 = makeText("Snow-ash");
             m1.append(
                 " gently crumbles from the face of a lifeless pale moon. The river remains still, but clumps of half-frozen ice batter at each plank of my makeshift raft. Mountains stretch far beyond the limits of my sight, all around me.",
-                lineBreak(), lineBreak(),
+                ...dub,
                 "A professional sailor might sigh and groan at the sight of such conditions. Yet for an underprepared refugee, it is an intoxicating promise of eternal bliss. A refugee from her own life, a refugee like me.",
-                lineBreak(), lineBreak(),
+                ...dub,
                 "But the weight of the anchor is far greater than the weight of the mind. Regardless of who I am, I have to steer myself to safety.",
-                lineBreak(), lineBreak(),
+                ...dub,
                 "The cold has done much damage to my recycled-clothing sails. If I don't fix them, sooner or later it will come back to bite me.",
-                lineBreak(), lineBreak(),
+                ...dub,
                 "The knots holding my raft together are also giving out. Maybe using unidentified vines around my dilapidated house was something to be reconsidered.",
-                lineBreak(), lineBreak(),
+                ...dub,
                 "And how mindless of me, to have left my food unmonitored in such cold. Some of my fruits are starting to go black and my meat chunks are hardly different from those ice chunks. I won't even think about starting a fire right now. At least there's consolation in the fact that most of that was stolen.",
-                lineBreak(), lineBreak(),
+                ...dub,
                 "All while the raft is being rocked back and forth, of course. But I have to do something besides just steering."
             );
-        
-        const head1 = makeText("August 11th.", "h1");
-        head1.classList.add("left-aligned");
-        m1.classList.add("left-aligned");
+        const preliminary = makeText("This is a recollection of events that changed the course of my life, and that I'll never forget. Written as though they were my live thoughts, for when I need to relive the moment.");
+        const head1 = makeText("August 11th, 1:51 a.m.", "h1");
+        head1.classList.add("right-aligned");
+        m1.classList.add("right-aligned");
+        preliminary.classList.add("right-aligned");
         
         function showStart() {
             showScreen(
-                [head1, m1],
+                [preliminary, head1, m1],
                 [
                     makeButton("sails", "black", () => {
                         fixsails();
@@ -149,14 +151,19 @@
         // START / FIX SAILS
         // ==========================================
 
+        const msails = makeText("I've decided");
+            msails.append(
+                " that the sails are the primary of my concerns. After all, it's the main driving force of my raft. I'd otherwise have to row bare-handed, and that isn't very appealing when there's notable friction from below and other things to take care of.",
+                ...dub,
+                
+            );
+        const headsails = makeText("August 11th, 1:52 a.m.");
+        msails.classList.add("right-aligned");
+        headsails.classList.add("right-aligned");
+        
         function fixsails() {
             showScreen(
-                [
-                    makeText(
-                        "you've advanced to the next step",
-                        "p"
-                    )
-                ],
+                [headsails, msails],
                 [
                     // These buttons intentionally do nothing for now.
                     makeButton("Option A", "black"),
@@ -201,9 +208,7 @@
             }, 3000);
         }
 
-        // ==========================================
-        // INITIAL SCREEN
-        // ==========================================
+        
 
         showStart();
     </script>
