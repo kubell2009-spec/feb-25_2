@@ -25,6 +25,11 @@ h1.shared-text {
     letter-spacing: 0.02em;
 }
 
+.left-aligned {
+    text-align: left;
+    display: block;
+}
+
 /* Keep ASCII art aligned correctly */
 pre,
 .ascii-face {
