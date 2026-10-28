@@ -32,6 +32,12 @@ h1.shared-text {
     width: 100%;
 }
 
+.shared-text.right-aligned {
+    text-align: right;
+    display: block;
+    width: 100%;
+}
+
 /* Keep ASCII art aligned correctly */
 pre,
 .ascii-face {
