@@ -26,7 +26,7 @@ h1.shared-text {
     letter-spacing: 0.02em;
 }
 
-.left-aligned {
+.shared-text.left-aligned {
     text-align: left;
     display: block;
     width: 100%;
