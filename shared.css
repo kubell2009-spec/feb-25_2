@@ -28,6 +28,7 @@ h1.shared-text {
 .left-aligned {
     text-align: left;
     display: block;
+    width: 100%;
 }
 
 /* Keep ASCII art aligned correctly */
