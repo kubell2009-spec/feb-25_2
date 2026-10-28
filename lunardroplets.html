@@ -133,15 +133,15 @@
             showScreen(
                 [preliminary, head1, m1],
                 [
-                    makeButton("sails", "black", () => {
+                    makeButton("sails", () => {
                         fixsails();
                     }),
 
-                    makeButton("knots", "black", () => {
+                    makeButton("knots", () => {
                         fixknots();
                     }),
 
-                    makeButton("food", "black", () => {
+                    makeButton("food", () => {
                         fixchest();
                     })
                 ]
@@ -167,9 +167,9 @@
                 [headsails, msails],
                 [
                     // These buttons intentionally do nothing for now.
-                    makeButton("Option A", "black"),
-                    makeButton("Option B", "black"),
-                    makeButton("Option C", "black")
+                    makeButton("Option A"),
+                    makeButton("Option B"),
+                    makeButton("Option C")
                 ]
             );
         }
@@ -184,7 +184,7 @@
                     makeText("you've failed", "p")
                 ],
                 [
-                    makeButton("Retry", "black", () => {
+                    makeButton("Retry", () => {
                         showStart();
                     })
                 ]
