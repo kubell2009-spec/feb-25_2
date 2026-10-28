@@ -16,7 +16,7 @@ h1.shared-text {
     line-height: 1.3;
 }
 
-shared-text.left-aligned {
+.left-aligned {
     text-align: left;
     display: block;
     width: 100%;
