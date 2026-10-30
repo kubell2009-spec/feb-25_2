@@ -47,10 +47,19 @@ export function makeButton(label, onClick = null, scrollToTop = false) {
 
     if (scrollToTop) {
         button.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            const scrollContainer = document.querySelector(".shared-page");
+
+            if (scrollContainer) {
+                scrollContainer.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
         });
     }
 
