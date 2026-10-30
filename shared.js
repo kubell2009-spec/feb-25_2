@@ -35,16 +35,23 @@ export function lineBreak() {
  * Example: makeButton("Enter", "white", () => checkPassword())
  */
 
-export function makeButton(label, onClick = null) {
+export function makeButton(label, onClick = null, scrollToTop = false) {
     const button = document.createElement("button");
 
     button.classList.add("shared-button");
     button.textContent = label;
 
-    // Keep the old argument for compatibility,
-    // but let CSS handle automatic contrast.
     if (typeof onClick === "function") {
         button.addEventListener("click", onClick);
+    }
+
+    if (scrollToTop) {
+        button.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
     }
 
     return button;
