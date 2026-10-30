@@ -173,12 +173,39 @@
             showScreen(
                 [headsails, msails],
                 [
-                    // These buttons intentionally do nothing for now.
-                    makeButton("Option A"),
-                    makeButton("Option B"),
-                    makeButton("Option C")
+                    makeButton("smash", () => {smashsails();}),
+                    makeButton("cut", () => {cutsails();})
                 ]
             );
+        }
+
+        // ==========================================
+        // START / FIX SAILS / SMASH SAILS
+        // ==========================================
+
+        const msmash = makeText("I'll try to break the ice first.");
+        msmash.append(
+            " If it doesn't work, I can always go back to the other option.",
+            ...dub(),
+        );
+        const headsmash = makeText("August 11th, 1:54 a.m.", "h1");
+        msmash.classList.add("right-aligned");
+        headsmash.classList.add("right-aligned");
+        
+        function smashsails() {
+            showScreen([headsmash, msmash],
+                [
+                    makeButton("cut the sails.", () => {cutsails();})
+                ]
+            );
+        }
+        
+        // ==========================================
+        // START / FIX SAILS / CUT SAILS
+        // ==========================================
+
+        function cutsails() {
+
         }
 
         // ==========================================
