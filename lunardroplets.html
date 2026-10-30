@@ -132,15 +132,15 @@
                 [
                     makeButton("sails", () => {
                         fixsails();
-                    }),
+                    }, true),
 
                     makeButton("knots", () => {
                         fixknots();
-                    }),
+                    }, true),
 
                     makeButton("food", () => {
-                        fixchest();
-                    })
+                        fixfood();
+                    }, true)
                 ]
             );
         }
@@ -173,8 +173,8 @@
             showScreen(
                 [headsails, msails],
                 [
-                    makeButton("smash", () => {smashsails();}),
-                    makeButton("cut", () => {cutsails();})
+                    makeButton("smash", () => {smashsails();}, true),
+                    makeButton("cut", () => {cutsails();}, true)
                 ]
             );
         }
@@ -195,7 +195,7 @@
         function smashsails() {
             showScreen([headsmash, msmash],
                 [
-                    makeButton("cut the sails.", () => {cutsails();})
+                    makeButton("cut the sails.", () => {cutsails();}, true)
                 ]
             );
         }
@@ -220,16 +220,34 @@
                 [
                     makeButton("Retry", () => {
                         showStart();
-                    })
+                    }, true)
                 ]
             );
         }
 
         // ==========================================
-        // START / FIX CHEST
+        // START / FIX FOOD
         // ==========================================
 
-        function fixchest() {
+        function fixfood() {
+            showScreen(
+                [
+                    makeText("you've failed", "p")
+                ],
+                [
+                    makeButton("Retry", () => {
+                        showStart();
+                    }, true)
+                ]
+            );
+        }
+
+
+        // ==========================================
+        // END
+        // ==========================================
+
+        function end() {
             showScreen(
                 [
                     makeText("you've won, redirecting", "p")
