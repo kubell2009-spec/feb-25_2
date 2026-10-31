@@ -180,3 +180,20 @@ pre,
     outline: none;
     box-shadow: none;
 }
+
+
+/* =================================
+   ZALGO / DISTORTED TEXT
+================================= */
+
+.zalgo-text {
+    font-family: "Cedarville Cursive", cursive;
+    line-height: 2.5;
+    display: inline;
+}
+
+.zalgo-character {
+    display: inline;
+    font-family: inherit;
+}
+
