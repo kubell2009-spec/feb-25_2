@@ -182,17 +182,6 @@ pre,
 }
 
 /* ZALGO TEXT */
-
-.zalgo-text {
-    font-family: "Cedarville Cursive", cursive;
-    text-align: center;
-    font-size: 19px;
-    letter-spacing: 0.02em;
-    line-height: 2.5;
+.zalgo-addons {
+    font-family: "Noto Sans", sans-serif;
 }
-
-.zalgo-character {
-    font-family: inherit;
-    display: inline;
-}
-
