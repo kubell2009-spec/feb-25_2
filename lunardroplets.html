@@ -123,8 +123,8 @@
                 "All while the raft is being rocked back and forth, of course. But I have to do something besides just steering."
             );
         const head1 = makeText("August 11th, 1:51 a.m.", "h1");
-        head1.classList.add("right-aligned");
-        m1.classList.add("right-aligned");
+        head1.classList.add("left-aligned");
+        m1.classList.add("left-aligned");
         
         function showStart() {
             showScreen(
@@ -166,8 +166,8 @@
                 "What to do, what to do."
             );
         const headsails = makeText("August 11th, 1:52 a.m.", "h1");
-        msails.classList.add("right-aligned");
-        headsails.classList.add("right-aligned");
+        msails.classList.add("left-aligned");
+        headsails.classList.add("left-aligned");
         
         function fixsails() {
             showScreen(
@@ -183,19 +183,125 @@
         // START / FIX SAILS / SMASH SAILS
         // ==========================================
 
+        //SMASH 1
         const msmash = makeText("I'll try to break the ice first.");
         msmash.append(
             " If it doesn't work, I can always go back to the other option.",
             ...dub(),
+            "It's crunchy. And thick. If it tasted good and weren't so hazardous, I probably would have opted for eating it off.",
+            ...dub(),
+            "The next bend in the river is getting quite close."
         );
         const headsmash = makeText("August 11th, 1:54 a.m.", "h1");
-        msmash.classList.add("right-aligned");
-        headsmash.classList.add("right-aligned");
+        msmash.classList.add("left-aligned");
+        headsmash.classList.add("left-aligned");
         
         function smashsails() {
             showScreen([headsmash, msmash],
                 [
-                    makeButton("cut the sails.", () => {cutsails();}, true)
+                    makeButton("stop", () => {stopsmashing();}, true),
+                    makeButton("keep going", () => {smashsails2();}, true)
+                ]
+            );
+        }
+
+        //SMASH 2
+        const msmash2 = makeText("It's working, slowly and steadily.");
+        msmash2.append(
+            " More and more chips of ice fly off beyond the raft and disappear into the water. Where they can go and freeze all they want.",
+            ...dub(),
+            "This is great physical exercise. It's keeping me heated up.",
+            ...dub(),
+            "The next bend in the river is maybe about twenty seconds away. I can still make it."
+        );
+        const headsmash2 = makeText("August 11th, 1:54 a.m.", "h1");
+        msmash2.classList.add("left-aligned");
+        headsmash2.classList.add("left-aligned");
+        
+        function smashsails2() {
+            showScreen([headsmash2, msmash2],
+                [
+                    makeButton("stop", () => {stopsmashing();}, true),
+                    makeButton("keep going", () => {smashsails3();}, true)
+                ]
+            );
+        }
+
+        //SMASH 3
+        const msmash3 = makeText("The sails, the sails are moving again!");
+        msmash3.append(
+            ...dub(),
+            "THey're only slightly swaying on their own, but the range that I can move them in is significantly more. I might be able to get them back in operation before that bend. Not full operation, but I don't need full operation."
+        );
+        const headsmash3 = makeText("August 11th, 1:55 a.m.", "h1");
+        msmash3.classList.add("left-aligned");
+        headsmash3.classList.add("left-aligned");
+        
+        function smashsails3() {
+            showScreen([headsmash3, msmash3],
+                [
+                    makeButton("keep going.", () => {smashsails4();}, true)
+                ]
+            );
+        }
+
+        //SMASH 4
+        const msmash4 = makeText("The raft is changing its trajectory.");
+        msmash4.append(
+            " I knew it, it worked. I did it, I got myself out of this. I just have to keep chipping away more so it turns faster."
+        );
+        const headsmash4 = makeText("August 11th, 1:55 a.m.", "h1");
+        msmash4.classList.add("left-aligned");
+        headsmash4.classList.add("left-aligned");
+        
+        function smashsails4() {
+            showScreen([headsmash4, msmash4],
+                [
+                    makeButton("keep going.", () => {smashsails5();}, true)
+                ]
+            );
+        }
+
+        //SMASH 5
+        const msmash5 = makeText("Come on, you old thing. I'm trying my best for you, so why won't you turn faster?");
+        const headsmash5 = makeText("August 11th", "h1");
+        msmash5.classList.add("left-aligned");
+        headsmash5.classList.add("left-aligned");
+        
+        function smashsails5() {
+            showScreen([headsmash5, msmash5],
+                [
+                    makeButton("keep going.", () => {smashsails6();}, true)
+                ]
+            );
+        }
+
+        //SMASH 6
+        const msmash6 = makeText("Come on, you old thing. Now isn't the time for you to be stalling.");
+        const headsmash6 = makeText("August 11th", "h1");
+        msmash6.classList.add("left-aligned");
+        headsmash6.classList.add("left-aligned");
+        
+        function smashsails6() {
+            showScreen([headsmash6, msmash6],
+                [
+                    makeButton("keep going.", () => {smashsails7();}, true)
+                ]
+            );
+        }
+
+        //SMASH 7
+        const msmash7 = makeText("Move, start moving. I̶ ̵a̸m̶ ̴n̴o̶t̴ b̷̰̅́͝r̷̥̓̕ḙ̵͌a̴͎̬̔̆͜k̴̬̻̹̃̉͂i̶̺̯̤̇̆n̶̘͚̓g̴̛̼̺̠̀̿ ̸̛̩͙̆͊ͅa̷̟͔̮͝l̵̻̲͓͋͘l̴̖̩͌̓ ̴̟̗͈͛ţ̶͓̦͑h̸͚̲͙̐̿͠į̶̞́͂͂s̷̳͚̄̑ ̴̪̚i̶̪̦̮͗̔c̸̖̄̓ę̵̭̭̾ j̷̰̹̮̰̖̤͎͆̽́͂̚͝͠ù̸̧͈̺̔͐̓͝ș̶̨̰͔͍̣̖͔̈́͜ͅt̸̙̯̳̠̣̟͕̰̭́̋́̓̀͠ͅ ̵̩̦̓̀̇̅́̚̕͘͜͝f̴̛̖̘́̈́͛̿o̴̟̗̥͙̳̤̓̓̈́͒́̅̈́r̷̛͓̱̖̭̘͉̞͖̰͛͊̀͑ ̷͉̯̓̿͂̆̽̈́͘y̷̮̼͙͎̺̤͇̞͔̞̋̊̆͐͌o̴̧͓̟̲̝̲̿̓́̇̔̆̌̓̿̀ͅų̸̨̛̗̹̱̣̉̀̒̉͂̎̆͠ ̷̳̘̞͕̰̬̅͗͒t̸̨̳̮̩̠͕̮̟͚̀̄͜ọ̵͖͎̞͆̄̆̈́͑̋̈́̚͠ b̷͉̞̙͇̝̝̮̘̮͇̫̓̊͑͗͊͝͝͝e̶̡̧͈͓̮̭͛͐̉̏̍̔̌́̋̒͐̿̌͗͠ ̴̨͕̺͙̖̩͈̩͈́̀͛͊̑͜͝ͅạ̷̛̭͈̈̉́̄̒̕̚͠ ̵̟͆́̈͌̊̂̿̅̏̓͂̍͊͌̚̚ụ̵̀̈́̈́̉̽̿͂̋̃̂͛̏͋̍͌͛͛s̷̑̏̂͆̓͝͝ͅȅ̴̗l̶͙̺̭̠̤͕͂ę̸̮̰̘̲͉̜̣͚̣͓̫͎̇́̋̈͑̀̈́͗͋̎̅̉̑̚͜͜͝͠͠s̴͚̬̣͈̗̘̝͕̝͍̬̹͕̭̬͇͖̦̉̃̎͑̐̃̊͘s̵̞̩̘̥̠̩̽̇͗͝͝,̸̠͈̘̞̣̹͐̋̌̈͂̽̎̽̌̋̚̚͝ ̸̢͉̫͕̯̻͈͖̺̩̉͑̈́͘̚ư̵͛͂̎̉̃̏̈̆̒̚ṉ̵̣̖͓̬̗̈́̃̇͑͒̈́͂̃͐̏̕̚c̶̛̫̽̽͐̒͗͗̔͊̎͠͝͠͠o̸̡̳̖̻̗̼̗̅̑͑́͐̀͊̒͑̎̕͘ó̸̟̪̥̖̮̲̟̞͚̲̗͈͖̪̥̪̤́̒̂̐̀̈̋̀̓̚ͅp̵̯̣̣̃̅͝ę̷̧̛̣͈̱̩̹͆͊̾͂̄̎͂͋̒͋͘̚͝r̴̡͍̹̦̟̟̣̜̥͎̋͊͛̀͑͑̐̂͐̓̇̉͛̉͜͠a̶̢̡̧̢̛̞̣͖͕̻̹̯͚̝͍͎̟̾̍̎̀̃̒̓̔̈̑̂̃͗̑̚͜͝ͅt̸̯̓̍̎̽̐̎͆́́͛͘͠͝͝͝͝i̶͇̱̲̻̗͇̪͕͍̗͇̞̮͂͐̒͛̈́̈́͊̋́̐̐̎̈́͆̎̚͘͝ͅͅv̸̨̢͖͍̜̹̙̤̞̭̗̦͈̩̲͊̐̊͒̍̃͊̈́̈́̔͂ę̴̛͙͚͚̮͇͉̦͋͊̄́̓̈́̄ █̴̥͕̪̖̬̻̰͇̦͕̅͌█̵̣̤̣͔̬̱͕͓͚̪̔̋̽█̸̨̡͚͕̙͉͔̘͇̮͈̘̩͎̘̖͎̼̽█̶̧̢̬͖͕̝̮̥̙̦̤͚̟̮̠̻͉̰̀͂͒͑̿̈͑̒͑̑͋̐̋̋̉̏̏́̚̚͜͠͝͝█̴̫̙͛̊̏͑̐̀͛̆█̶͇̑̉̈́̓̒͊͑̈́̐͗̀͐̾͆̽͒͘͝͝█̴̛̻̯̠̮͗̀̉̀̇̓͊̏̀̇̀͗̈́͜█̷͍͇̱̭̙̗̲̩͐͛̌̿̌̈́̌̈́̀̄̕█̵̡̱͍̩̤̮̣̦̻̪̠̯̮̰̠̳̙̱͎̥̗͇́̓̌̊͑̽͋̄̿̀̓͝█̷̨̞̥̙͉̣͚̗̞̳͙̺͙̺̠͖̮͈̱͛͑̌̃̓̔͗̿͌̍̊͛̅̍͠");
+        msmash7.append(
+            ...dub(),
+            "------------aaa"
+        );
+        msmash7.classList.add("left-aligned");
+        
+        function smashsails7() {
+            showScreen([msmash7],
+                [
+                    makeButton("a second chance?", () => {showStart();}, true)
                 ]
             );
         }
