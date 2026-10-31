@@ -181,32 +181,18 @@ pre,
     box-shadow: none;
 }
 
-
-/* =================================
-   ZALGO / DISTORTED TEXT
-================================= */
+/* ZALGO TEXT */
 
 .zalgo-text {
     font-family: "Cedarville Cursive", cursive;
+    text-align: center;
+    font-size: 19px;
+    letter-spacing: 0.02em;
     line-height: 2.5;
-    display: inline;
 }
 
 .zalgo-character {
-    display: inline;
     font-family: inherit;
-}
-
-
-/* ZALGO TEXT */
-
-.shared-text.zalgo-text {
-    font-family: "Cedarville Cursive", cursive !important;
-    line-height: 2.5;
     display: inline;
 }
 
-.zalgo-text.zalgo-character {
-    font-family: "Cedarville Cursive", cursive !important;
-    display: inline;
-}
