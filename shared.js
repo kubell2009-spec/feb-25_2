@@ -102,3 +102,71 @@ export function makePasswordCheck({
 
     return check;
 }
+
+
+export function distorttext(text, intensity = 5) {
+    const element = document.createElement("span");
+
+    element.classList.add("shared-text", "zalgo-text");
+    element.setAttribute("aria-label", text);
+
+    const topMarks = [
+        "\u0300", "\u0301", "\u0302", "\u0303",
+        "\u0304", "\u0305", "\u0306", "\u0307",
+        "\u0308", "\u0309", "\u030A", "\u030B",
+        "\u030C", "\u030D", "\u030E", "\u030F",
+        "\u0310", "\u0311", "\u0312", "\u0313"
+    ];
+
+    const middleMarks = [
+        "\u0315", "\u0334", "\u0335", "\u0336",
+        "\u0337", "\u0338", "\u034F"
+    ];
+
+    const bottomMarks = [
+        "\u0316", "\u0317", "\u0318", "\u0319",
+        "\u031A", "\u031B", "\u031C", "\u031D",
+        "\u031E", "\u031F", "\u0320", "\u0321",
+        "\u0322", "\u0323", "\u0324", "\u0325",
+        "\u0326", "\u0327", "\u0328", "\u0329"
+    ];
+
+    const allMarks = [
+        ...topMarks,
+        ...middleMarks,
+        ...bottomMarks
+    ];
+
+    for (const character of Array.from(text)) {
+        const characterSpan = document.createElement("span");
+
+        let corrupted = character;
+
+        const amount = Math.floor(
+            Math.random() * (intensity + 1)
+        );
+
+        for (let i = 0; i < amount; i++) {
+            const marks = [
+                topMarks,
+                middleMarks,
+                bottomMarks
+            ];
+
+            const category = marks[
+                Math.floor(Math.random() * marks.length)
+            ];
+
+            corrupted += category[
+                Math.floor(Math.random() * category.length)
+            ];
+        }
+
+        characterSpan.textContent = corrupted;
+        characterSpan.classList.add("zalgo-character");
+
+        element.append(characterSpan);
+    }
+
+    return element;
+}
