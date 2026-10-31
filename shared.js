@@ -162,7 +162,15 @@ export function distorttext(text, intensity = 5) {
             ];
         }
 
-        characterSpan.textContent = character;
+        const base = document.createElement("span");
+        base.classList.add("zalgo-base");
+        base.textContent = character;
+
+        const addons = document.createElement("span");
+        addons.classList.add("zalgo-addons");
+        addons.textContent = corrupted.slice(character.length);
+
+        characterSpan.append(base, addons);
         characterSpan.classList.add("zalgo-character");
 
         element.append(characterSpan);
