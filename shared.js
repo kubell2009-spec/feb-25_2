@@ -162,7 +162,7 @@ export function distorttext(text, intensity = 5) {
             ];
         }
 
-        characterSpan.textContent = corrupted;
+        characterSpan.textContent = character;
         characterSpan.classList.add("zalgo-character");
 
         element.append(characterSpan);
