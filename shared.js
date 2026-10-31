@@ -105,10 +105,10 @@ export function makePasswordCheck({
 
 
 export function distorttext(text, intensity = 5) {
-    const element2 = document.createElement("span");
+    const element = document.createElement("span");
 
-    element2.classList.add("shared-text", "zalgo-text");
-    element2.setAttribute("aria-label", text);
+    element.classList.add("shared-text", "zalgo-text");
+    element.setAttribute("aria-label", text);
 
     const topMarks = [
         "\u0300", "\u0301", "\u0302", "\u0303",
